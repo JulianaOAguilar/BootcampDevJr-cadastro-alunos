@@ -16,10 +16,10 @@
     </header>
 
 
-    <!-- forms-->
     <main class="container mt-3">
+        
+    <!-- forms-->
         <section>
-
             <h1 class="display-6"> Formulário de Cadastro </h1>
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -42,9 +42,9 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="SelectCategory" class="col-sm-2 col-form-label">Cursos</label>
+                            <label for="SelectOprion" class="col-sm-2 col-form-label">Cursos</label>
                             <div class="col-sm-5">
-                                <select class="form-select" aria-label="SelectOptions" id="SelectCategory" required>
+                                <select class="form-select" aria-label="SelectOption" id="SelectOption" required>
                                     <option value='' selected>Escolha:</option>
                                     <option value="1">Java</option>
                                     <option value="2">Angular</option>
@@ -52,8 +52,31 @@
                                     <option value="4">Python</option>
                                   </select>
                             </div>
-                            
+                            <div class="row mt-3">
+                                <label for="InputShift" class="col-sm-2 col-form-label">Turno:</label>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="RadiusShift" id="RadiusShift">
+                                        <label class="form-check-label" for="RadiusShift">
+                                         Manhã
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="RadiusShift" id="RadiusShift" checked>
+                                        <label class="form-check-label" for="RadiusShift">
+                                          Tarde
+                                        </label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="RadiusShift" id="RadiusShift">
+                                        <label class="form-check-label" for="RadiusShift">
+                                         Noite
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
                         </div>
+                        
                         <input class="btn btn-primary" type="submit" value="Submit">
                     </form>
                     <hr>
@@ -62,7 +85,7 @@
 
         </section>
 
-
+        
         <!-- Table-->
         <section>
         </section>

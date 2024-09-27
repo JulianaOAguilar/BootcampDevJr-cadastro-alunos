@@ -57,20 +57,54 @@ function AddNewRow(Item) {
 
     //Load the student's email
     var emailNode = document.createTextNode(Item.email);
-    newRow.insertCell().appendChild(emailNode);
+    var cell = newRow.insertCell();
+    cell.className="d-none d-md-table-cell";
+    cell.appendChild(emailNode);
 
     //Load the student's  cellphone number
     var telefoneNode = document.createTextNode(Item.telefone);
-    newRow.insertCell().appendChild(telefoneNode);
+    cell = newRow.insertCell();
+    cell.className="d-none d-md-table-cell";
+    cell.appendChild(telefoneNode);
+    
 
     //Load the student's course
     var CourseNode = document.createTextNode((category[Item.category - 1].name));
-    newRow.insertCell().appendChild(CourseNode);
+    cell = newRow.insertCell();
+    cell.className="d-none d-md-table-cell";
+    cell.appendChild(CourseNode);
 
     //Load the student's shift
     var shiftNode = document.createTextNode((shift[Item.shift - 1].name));
-    newRow.insertCell().appendChild(shiftNode);
+    cell = newRow.insertCell();
+    cell.className="d-none d-md-table-cell";
+    cell.appendChild(shiftNode);
+
+
 
 }
 
+
+
+function save() {
+
+    var shiftSelected = document.querySelector('input[name="RadiusShift"]:checked').value;
+
+
+    var Item = {
+
+        id: student.length + 1,
+       name: document.getElementById("InputName").value,
+       email: document.getElementById("InputEmail").value,
+       telefone: document.getElementById("InputTelefone").value,
+       category: parseFloat(document.getElementById('SelectOption').value),
+       shift: parseFloat(shiftSelected)
+
+    }
+    AddNewRow(Item);
+    student.push(Item);
+
+    document.getElementById('FormStudent').reset(); 
+
+}
 

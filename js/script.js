@@ -42,7 +42,7 @@ function loadStudent() {
 }
 
 function AddNewRow(Item) {
-    
+
 
     var table = document.getElementById("StudentsTable");
     var newRow = table.insertRow();
@@ -73,4 +73,4 @@ function AddNewRow(Item) {
 
 }
 
-//MEU DEUS EU TO ENTENDENDO KKKKK QUE LEGAL (obg prof glauco)
+

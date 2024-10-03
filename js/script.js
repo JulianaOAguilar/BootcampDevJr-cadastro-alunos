@@ -1,5 +1,5 @@
 
-var category = [
+var categories = [
 
     { id: 1, name: "Java" },
     { id: 2, name: "Angular" },
@@ -9,7 +9,7 @@ var category = [
 ]
 
 
-var shift = [
+var shifts = [
 
     { id: 1, name: "Manhã" },
     { id: 2, name: "Tarde" },
@@ -19,25 +19,25 @@ var shift = [
 
 
 
-var student = [
+var students = [
 
     {
         id: 1,
         name: 'Pedro Antonio',
         email: 'pedro@abutua.com',
         telefone: '(15) 99999-9999',
-        category: 2,
-        shift: 2
+        categories: 2,
+        shifts: 2
     }
 
 ]
 
 //on load
-loadStudent();
+loadStudents();
 
 //load students
-function loadStudent() {
-    for (let item of student)
+function loadStudents() {
+    for (let item of students)
         AddNewRow(item);
 }
 
@@ -69,13 +69,13 @@ function AddNewRow(Item) {
     
 
     //Load the student's course
-    var CourseNode = document.createTextNode((category[Item.category - 1].name));
+    var CourseNode = document.createTextNode((categories[Item.categories - 1].name));
     cell = newRow.insertCell();
     cell.className="d-none d-md-table-cell";
     cell.appendChild(CourseNode);
 
     //Load the student's shift
-    var shiftNode = document.createTextNode((shift[Item.shift - 1].name));
+    var shiftNode = document.createTextNode((shifts[Item.shifts - 1].name));
     cell = newRow.insertCell();
     cell.className="d-none d-md-table-cell";
     cell.appendChild(shiftNode);
@@ -88,21 +88,21 @@ function AddNewRow(Item) {
 
 function save() {
 
-    var shiftSelected = document.querySelector('input[name="RadiusShift"]:checked').value;
+    var shiftSelected = document.querySelector('input[name="RadiusShifts"]:checked').value;
 
 
     var Item = {
 
-        id: student.length + 1,
+        id: students.length + 1,
        name: document.getElementById("InputName").value,
        email: document.getElementById("InputEmail").value,
        telefone: document.getElementById("InputTelefone").value,
-       category: parseFloat(document.getElementById('SelectOption').value),
-       shift: parseFloat(shiftSelected)
+       categories: parseFloat(document.getElementById('SelectOption').value),
+       shifts: parseFloat(shiftSelected)
 
     }
     AddNewRow(Item);
-    student.push(Item);
+    students.push(Item);
 
     document.getElementById('FormStudent').reset(); 
 
